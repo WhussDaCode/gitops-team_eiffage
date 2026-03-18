@@ -9,7 +9,7 @@ spec:
     # ⚠️ Remplace par l'URL de TON dépôt GitHub
     repoURL: https://github.com/WhussDaCode/gitops-team_eiffage.git
     targetRevision: HEAD
-    path: apps/todo-api
+    path: charts/todo-api
   destination:
     server: https://kubernetes.default.svc
     namespace: todo-api
