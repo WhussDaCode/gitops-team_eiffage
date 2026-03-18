@@ -18,9 +18,9 @@ spec:
       containers:
         - name: todo-api
           # ⚠️ Remplace par ton image réelle (ex: docker.io/ton-pseudo/todo-api:v1.0.0)
-          image: ghcr.io/WhussDaCode/todo-api:latest 
+          image: docker.io/library/nginx:alpine
           ports:
-            - containerPort: 3000
+            - containerPort: 80
               name: http
           env:
             - name: PORT
