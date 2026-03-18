@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: todo-api
+  namespace: argocd
+spec:
+  project: default
+  source:
+    # ⚠️ Remplace par l'URL de TON dépôt GitHub
+    repoURL: https://github.com/WhussDaCode/gitops-team_eiffage.git
+    targetRevision: HEAD
+    path: apps/todo-api
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: todo-api
+  syncPolicy:
+    automated:
+      prune: true     # Supprime automatiquement les ressources sur K8s si tu les enlèves de Git
+      selfHeal: true  # Si quelqu'un modifie le cluster à la main, Argo CD remet ta version Git
+    syncOptions:
+      - CreateNamespace=true # Crée le namespace todo-api automatiquement s'il n'existe pas
