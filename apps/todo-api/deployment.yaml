@@ -18,7 +18,7 @@ spec:
       containers:
         - name: todo-api
           # ⚠️ Remplace par ton image réelle (ex: docker.io/ton-pseudo/todo-api:v1.0.0)
-          image: ghcr.io/[votre-org]/todo-api:latest 
+          image: ghcr.io/WhussDaCode/todo-api:latest 
           ports:
             - containerPort: 3000
               name: http
